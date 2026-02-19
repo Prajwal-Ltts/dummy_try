@@ -1,0 +1,6 @@
+ services :
+ - type : web 
+   name : nicegui-app
+   env : python
+   buildCommand : pip install -r requirements.txt
+   startCommand : python -m nicegui_app.py
