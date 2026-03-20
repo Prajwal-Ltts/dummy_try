@@ -35,4 +35,4 @@ with ui.card().classes('absolute-center w-80 p-8 shadow-2xl rounded-xl border bo
 ui.button(icon='dark_mode', on_click=lambda: ui.dark_mode().toggle())\
     .props('round flat').classes('absolute bottom-4 right-4')
 
-ui.run(title='Admin Login')
+ui.run(title='Admin Login', port=7860)
