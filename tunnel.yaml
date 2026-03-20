@@ -1,0 +1,23 @@
+name : Launch UI
+on : [workflow_dispatch]
+
+jobs :
+ run-app : 
+  runs-on: ubuntu-latest
+  setps : 
+   - uses : actions/checkout@v4
+   - name : Set up Python
+   - uses : actions/setup-python@v5
+   with :
+    python-version : "3.11"
+
+  - name : Install dependencies
+  run: pip install nicegui cloudflared
+
+  -name Run App and Tunnel
+
+  run : |
+   # Start UI
+   python nice_gui.py --port 7860 &
+   #cloudflared tunnel
+   cloudflared tunnel -url http://localhost:7860
